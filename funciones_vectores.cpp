@@ -25,7 +25,6 @@ void ejemplo1() {
     cout << "ingrese un numero: ";
     cin >> n;
     vector<number> vec(n);
-    auto pos = 1;
     for (auto it = begin(vec);
          it != end(vec); ++it) {
         cout  << "Ingresar el valor #"
@@ -41,7 +40,7 @@ void ejemplo1() {
 //---------------------------
 void ejemplo2() {
     range n;
-    cout << "ingrese un número: ";
+    cout << "ingrese un numero: ";
     cin >> n;
     container vec(n);
     for (auto & item: vec)
@@ -70,6 +69,7 @@ void imprimir_estadistica_letras(string text) {
 void ejercicio1() {
     string text;
     cout << "Ingrese un texto: ";
+    cin.ignore();
     getline(cin, text);
     imprimir_estadistica_letras(text);
 }
@@ -136,7 +136,7 @@ container generar_vector_posiciones_multiplo(container& vec,
         range pos) {
     container result;
     for (auto it = begin(vec); it != end(vec); ++it)
-       if (distance(begin(vec), it) % 3 == 0)
+       if (distance(begin(vec), it) % pos == 0)
            result.emplace_back(*it);
     return result;
 }
